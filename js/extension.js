@@ -11,7 +11,7 @@ while(inicio == "si"){
 		let producto = prompt("ingrese el nombre del producto")
 		let costo = parseInt( prompt("ingrese el costo del producto"))
 			precio = costo*ganancia
-		console.log("el precio de "+producto+"es"+precio+"(porcentaje%)")
+		console.log("el precio de "+producto+" es "+precio+" (" +porcentaje+" %)")
 		
 	}
 
