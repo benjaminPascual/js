@@ -22,41 +22,59 @@ do{
 			let cantidad = pedirNumero("ingrese la candidad de productos a calcular");
 			multiplicadorNeto();
 
+			const agregarProducto = (nombreProducto, costoProducto, categoriaProducto) => {
+					let nuevoProducto = {
+						Id: productos.length + 1,
+						Nombre: nombreProducto,
+						Categoria: categoriaProducto,
+						Costo: costoProducto,
+						Precio: costoProducto*ganancia,
+					}
+			productos.push(nuevoProducto)
+			}
+
 			do{
-				let nuevoProducto = {Nombre: pedirDato("ingrese el nombre del producto"), Precio: pedirNumero("ingrese el costo del producto")*ganancia};
-				productos.push(nuevoProducto);
+				let nombre = pedirDato("ingrese el nombre del producto")
+				let costo = pedirNumero("ingrese el costo del producto")
+				let categoria = pedirDato("ingrese la categoria del producto")
+				agregarProducto(nombre,costo,categoria)
 				console.log(productos[productos.length - 1])
 			}while(productos.length != cantidad)
 
 			inicio = pedirDato("se te olvido algun producto? desea agregar mas? (si/no)");
 		}
+
 	} else{
 		alert("su respuesta debe ser si o no")
 		inicio = pedirDato("desea calcular el precio de un producto? (si/no)");
 	}
 }while(inicio ==="si")
 
+let inicio2 = pedirDato("desea aumentar el precio de una categoria? (si/no)");
+do{
+	if (inicio2 ==="si" || inicio2==="no") {
+		while(inicio2 == "si"){
+			
+			let categoriaSolicitada = pedirDato("ingrese la categoria que desea aumentar")
+			let nuevoArray = productos.filter((el)=> el.Categoria.includes(categoriaSolicitada))
 
+			const actualizado = nuevoArray.map((el) => {
+				return {
+					Id: el.Id,
+					Nombre: el.Nombre,
+					Categoria: el.Categoria,
+					Costo: el.Costo,
+					Precio: el.Precio*1.10,
+				}
+			})
 
-/*do{
-	if (inicio ==="si" || inicio==="no") {
-		while(inicio == "si"){
-			let cantidad = pedirNumero("ingrese la candidad de productos a calcular");
-			multiplicadorNeto();
+			console.log(actualizado)
 
-			for (i = 0; i < cantidad; i++) {
-
-				let producto = pedirDato("ingrese el nombre del producto")
-				let costo = pedirNumero("ingrese el costo del producto");
-					precio = costo*ganancia
-				console.log("el precio de "+producto+" es "+precio)
-				
-			}
-
-			inicio = pedirDato("se te olvido algun producto? desea agregar mas? (si/no)");
+			inicio2 = pedirDato("se te olvido algun producto? desea agregar mas? (si/no)");
 		}
+
 	} else{
 		alert("su respuesta debe ser si o no")
-		inicio = pedirDato("desea calcular el precio de un producto? (si/no)");
+		inicio2 = pedirDato("desea calcular el precio de un producto? (si/no)");
 	}
-}while(inicio ==="si")*/
+}while(inicio2 ==="si")
