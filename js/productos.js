@@ -173,7 +173,7 @@ btnSelectCost.addEventListener("click", (e)=> {
 	}
 })
 
-const url= "../js/datos.json";
+const url= "../js/datos.JSON";
 async function mostrarProd(){
 	const datos= await fetch(url);
 	const productos= await datos.json();
