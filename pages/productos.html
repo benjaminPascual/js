@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <!-- CSS Nativo -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Hello, world!</title>
   </head>
@@ -20,7 +20,8 @@
           <div class="bg-dark p-4">
             <h5 class="text-white h4">Calculadora de Productos</h5>
             <span class="text-muted"></span>
-            <a href="pages/register.html">Registrarme</a>
+            <a href="newProduct.html">Agregar Productos</a>
+            <a href="../index.html">Salir</a>
           </div>
         </div>
         <nav class="navbar navbar-dark bg-dark">
@@ -31,18 +32,34 @@
       </div>
     </header>
     <main>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="i-inputEmail" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Contraseña</label>
-          <input type="password" class="form-control" id="i-inputPass">
-        </div>
-        <button type="submit" class="btn btn-primary" id="btnIngresar">Ingresar</button>
-        <a href="pages/register.html">Registrarse</a>
-      </form>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th><img src="https://icongr.am/fontawesome/barcode.svg?size=30&color=currentColor" alt=""></th>
+            <th>Nombre</th>
+            <th>
+              <select name="" id="selectCat">
+                <option value="all">Categoria</option>
+              </select>
+            </th>
+            <th>
+              <select name="" id="selectType">
+                <option value="all">Tipo</option>
+              </select>
+            </th>
+            <th>Costo
+              <div class="form-group col-md-6">
+                <input type="number" class="form-control" id="selectCost">
+                <button type="submit" class="btn btn-secondary" id="btnSelectCost"><img src="https://icongr.am/fontawesome/check.svg?size=17&color=ffffff" alt=""></button>
+              </div>
+            </th>
+            <th>Ganancia</th>
+            <th>Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="contenedorProductos"></tbody>
+      </table>
     </main>
     <footer>
     	
@@ -51,7 +68,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js" integrity="sha256-6DBhCk8kLxWN6B/oKVfvB0ieNTCY2r0rlFlkAjLmrsM=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/objets.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="../js/objets.js"></script>
+    <script type="text/javascript" src="../js/productos.js"></script>
   </body>
 </html>
